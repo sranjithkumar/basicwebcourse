@@ -1,0 +1,10 @@
+t1 = "my first name is %s and %s is  my last name."
+def sub2(s1, s2):
+   return t1 %(s1,s2)
+print sub2("ranjith","kumar")
+
+
+t2 = "I'm %(nickname)s. My real name is %(name)s, but my friends call me %(nickname)s."
+def sub_m(name, nickname):
+        return t2 %{'name':name, 'nickname':nickname}
+print sub_m("ranjith","kumar")
