@@ -204,15 +204,15 @@ class Welcome(BlogHandler):
 			self.redirect('unit2/signup')
 			
 app = webapp2.WSGIApplication([('/', MainPage), 
-								#('/unit2/rot13', Rot13),
-								('/unit2/signup', unit2Signup),
-								('/unit2/welcome', Welcome),
-								#('/blog/?', BlogFront),
-								#('/blog/([0-9]+)',PostPage),
-								#('/blog/newpost', NewPost),
-								('/signup', Register),
-								('/login', Login),
-								('/logout', Logout),
-								('/unit3/welcome', Unit3Welcome),
-								],
-								debug=True)
+				('/unit2/rot13', Rot13),
+				('/unit2/signup', unit2Signup),
+				('/unit2/welcome', Welcome),
+				('/blog/?', BlogFront),
+				('/blog/([0-9]+)',PostPage),
+				('/blog/newpost', NewPost),
+				('/signup', Register),
+				('/login', Login),
+				('/logout', Logout),
+				('/unit3/welcome', Unit3Welcome),
+			       ],
+			      debug=True)
