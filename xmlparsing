@@ -1,0 +1,6 @@
+import urllib2
+
+from xml.dom import minidom
+contents = urllib2.urlopen("http://www.nytimes.com/services/xml/rss/nyt/GlobalHome.xml").read()
+d = minidom.parseString(contents)
+print len(d.getElementsByTagName("item"))
