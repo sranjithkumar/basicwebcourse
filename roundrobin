@@ -1,0 +1,16 @@
+SERVERS = ['SERVER1', 'SERVER2', 'SERVER3', 'SERVER4']
+
+n = -1
+def get_server():
+    global n
+    n += 1
+    return SERVERS[n % len(SERVERS)]    
+
+print get_server()
+print get_server()
+print get_server()
+print get_server()
+print get_server()
+print get_server()
+print get_server()
+print get_server()
