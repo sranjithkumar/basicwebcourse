@@ -1,0 +1,52 @@
+CACHE = {}
+
+
+def set(key, value):
+    CACHE[key] = value
+    return True
+
+
+def get(key):
+    return CACHE.get(key)
+
+
+def delete(key):
+    if key in CACHE:
+        del CACHE[key]
+
+
+def flush():
+    CACHE.clear()
+
+
+def gets(key):
+   v = CACHE.get(key)
+   if v:
+        return v, hash(repr(v))
+
+def cas(key, value, cas_unique):
+   r = gets(key)
+   if r:
+        val, unique = r
+        if unique == cas_unique:
+            return set(key, value)
+        else:
+            return False
+    
+print set('x', 1)
+
+print get('x')
+
+print get('y')
+
+delete('x')
+print get('x')
+
+set('x', 2)
+print gets('x')
+print cas('x', 3, 0)
+
+print cas('x', 5, 6400019251)
+
+print get('x')
+
